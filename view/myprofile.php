@@ -10,6 +10,7 @@ include_once 'public/header.php';
 <div class="container">
   <h5>Nombre <?php echo $vars['name'] ?></h5>
 
+
   <h5>Faction: <?php echo $vars['faction'] ?></h5>
   <h5>Rank: <?php echo $vars['rank'] ?></h5>
   <h5>TimesTamp: <?php echo $vars['timestamp'] ?></h5>

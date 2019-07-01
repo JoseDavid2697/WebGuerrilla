@@ -22,6 +22,16 @@ class GuerrillaController {
         $this->view->show('myprofile.php',$api->inspectGuerrilla($_SESSION['sesion']));
     }
 
+    public function cargarVistaRanking(){
+        
+        $this->view->show('ranking.php',null);
+    }
+
+    public function cargarVistaResult(){
+        
+        $this->view->show('result.php',null);
+    }
+
     public function cerrarSesion(){
         $this->view->show('indexview.php',null);
         

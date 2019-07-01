@@ -1,0 +1,42 @@
+<?php
+
+    include_once 'public/header.php';
+
+?>
+
+<br>
+<br>
+<br>
+<div class="container">
+
+<table class="table">
+    <thead>
+        <tr>
+        <th scope="col">Rank</th>
+        <th scope="col">Company</th>
+        <th scope="col">Action</th>
+        </tr>
+    </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Dominator</td>
+      <td><a class="btn btn-primary" href="?controlador=Guerrilla&accion=cargarVistaResult">Attack</a></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+</div>
+<br>
+<br>
+<br>
+
+
+
+<?php
+
+    include_once 'public/footer.php';
+
+?>
