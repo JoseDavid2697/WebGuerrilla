@@ -7,7 +7,7 @@
 <br>
 <br>
 <br>
-<div class="container-fluid">
+<div class="container">
 
 <table class="table">
     <thead>
@@ -21,7 +21,7 @@
     <tr>
       <td>1</td>
       <td>Dominator</td>
-      <td><button type="button" class="btn btn-primary">Attack</td>
+      <td><a class="btn btn-primary" href="?controlador=Guerrilla&accion=cargarVistaResult">Attack</a></td>
     </tr>
   </tbody>
 </table>
