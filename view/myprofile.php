@@ -7,8 +7,8 @@ include_once 'public/header.php';
 <br>
 <br>
 <br>
-<div class="container-fluid">
-    <h5>Nombre</h5>
+<div class="container">
+    <h5>Name</h5>
     <h5>Oil: </h5>
     <h5>Money: </h5>
     <h5>People: </h5>

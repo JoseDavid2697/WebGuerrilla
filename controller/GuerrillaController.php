@@ -35,6 +35,11 @@ class GuerrillaController {
         $this->view->show('ranking.php',null);
     }
 
+    public function cargarVistaResult(){
+        
+        $this->view->show('result.php',null);
+    }
+
     public function cerrarSesion(){
         $this->view->show('indexview.php',null);
         
