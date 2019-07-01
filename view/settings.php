@@ -5,7 +5,7 @@ include_once 'public/header.php';
 <br>
 <br>
 <br>
-<div class="container-fluid">
+<div class="container">
 
 <form>
   <div class="form-group">
