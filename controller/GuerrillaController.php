@@ -23,13 +23,18 @@ class GuerrillaController {
     }
 
     public function cargarVistaRanking(){
-        
-        $this->view->show('ranking.php',null);
+        require_once 'model/ApiModel.php';
+        $api = new ApiModel();
+
+
+
+        $this->view->show('ranking.php',$api->ranking());
     }
 
     public function cargarVistaResult(){
         
-        $this->view->show('result.php',null);
+        
+        $this->view->show('result.php',$_GET['inf']);
     }
 
     public function cerrarSesion(){
