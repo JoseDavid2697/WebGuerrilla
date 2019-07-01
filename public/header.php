@@ -32,7 +32,7 @@
         <a class="nav-link" href="?controlador=Guerrilla&accion=cargarVistaMyProfile">My Profile</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Ranking</a>
+        <a class="nav-link" href="?controlador=Guerrilla&accion=cargarVistaRanking">Ranking</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="?controlador=Guerrilla&accion=cargarVistaSettings">Settings</a>
