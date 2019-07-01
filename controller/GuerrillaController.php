@@ -30,6 +30,11 @@ class GuerrillaController {
         $this->view->show('myprofile.php',null);
     }
 
+    public function cargarVistaRanking(){
+        
+        $this->view->show('ranking.php',null);
+    }
+
     public function cerrarSesion(){
         $this->view->show('indexview.php',null);
         
