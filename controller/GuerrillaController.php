@@ -1,16 +1,5 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of ItemController
- *
- * @author Jose David
- */
 class GuerrillaController {
     public function __construct() {
         //si no existe en php se crea sola
@@ -26,8 +15,11 @@ class GuerrillaController {
     }
 
     public function cargarVistaMyProfile(){
-        
-        $this->view->show('myprofile.php',null);
+        require_once 'model/ApiModel.php';
+        $api = new ApiModel();
+        session_start();
+        $_SESSION['sesion'] = 'armandocalvo06@gmail.com';
+        $this->view->show('myprofile.php',$api->inspectGuerrilla($_SESSION['sesion']));
     }
 
     public function cargarVistaRanking(){
