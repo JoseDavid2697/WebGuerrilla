@@ -26,6 +26,7 @@ class GuerrillaController {
     }
 
     public function cargarVistaMyProfile(){
+        
         $this->view->show('myprofile.php',null);
     }
 

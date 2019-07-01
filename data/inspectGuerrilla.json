@@ -1,0 +1,20 @@
+{
+    "name": "Los Pixies",
+    "email": "armandocalvo06@gmail.com",
+    "faction": "USA",
+    "timestamp": 4,
+    "rank": 1,
+    "resources": {
+      "oil": 230,
+      "money": 333,
+      "people": 100
+    },
+    "buildings": {
+      "bunker": 2
+    },
+    "army": {
+      "assault": 20,
+      "engineer": 40,
+      "tank": 40
+    }
+  }
