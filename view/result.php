@@ -14,7 +14,7 @@ include_once 'public/header.php';
     <!--Este mensaje debe ser cambiado de acuerdo al resultado del ataque-->
     <h5>You Win!</h5>
 
-    <p>You've attack to: <?php echo $vars ?></p>
+    <h6>You've attack to: <?php echo $vars ?></h6>
     <table class="table">
     <thead>
         <tr>
