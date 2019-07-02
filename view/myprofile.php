@@ -8,7 +8,7 @@ include_once 'public/header.php';
 <br>
 <br>
 <div class="container">
-  <h5>Nombre <?php echo $vars['name'] ?></h5>
+  <h5>Guerrilla name: <?php echo $vars['name'] ?></h5>
 
 
   <h5>Faction: <?php echo $vars['faction'] ?></h5>
@@ -33,7 +33,7 @@ include_once 'public/header.php';
     <thead>
       <tr>
         <th scope="col">Name</th>
-        <th scope="col">cantidad</th>
+        <th scope="col">Quantity</th>
         <th scope="col">Add</th>
       </tr>
     </thead>
@@ -56,15 +56,15 @@ include_once 'public/header.php';
     </tbody>
   </table>
 
-  <h4>Building</h4>
+  <h4>Buildings</h4>
 
   <?php $buildings = $vars['buildings'] ?>
 
   <table class="table">
     <thead>
       <tr>
-        <th scope="col">Nombre</th>
-        <th scope="col">cantidad</th>
+        <th scope="col">Name</th>
+        <th scope="col">Quantity</th>
         <th scope="col">Add</th>
       </tr>
     </thead>
