@@ -8,7 +8,7 @@
 <br>
 <br>
 <div class="container-fluid">
-<form>
+<form action="?controlador=Guerrilla&accion=cargarVistaMyProfile" method="post">
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
     <div class="col-sm-10">
