@@ -14,11 +14,28 @@ class ApiModel
 
     public function inspectGuerrilla($usuario)
     {
-        //aque se conecta con el Api, y se envia el correo registrado para saber 
+        //aqui se conecta con el Api, y se envia el correo registrado para saber 
         //cual es su guerrilla y los recuersos que tiene que buscar
+        
+        $postdata = http_build_query(
+            array(
+                'guerrillaName' => $usuario
+            )
+        );
 
-        $data = file_get_contents("data/inspectGuerrilla.json");
-        $guerrrilla = json_decode($data, true);
+
+
+        $opts = array(
+            'http' =>
+            array(
+                'method'  => 'GET',
+                'header'  => 'Content-Type: application/x-www-form-urlencoded',
+                'content' => $postdata
+            )
+        );
+        $context  = stream_context_create($opts);
+        $result = file_get_contents('http://localhost:50158/api/values/inspectGuerrilla/'.$usuario, false, $context);
+        $guerrrilla = json_decode($result, true);
     
         return $guerrrilla;
     }
