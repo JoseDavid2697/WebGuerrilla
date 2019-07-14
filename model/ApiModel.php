@@ -16,7 +16,7 @@ class ApiModel
     {
         //aqui se conecta con el Api, y se envia el correo registrado para saber 
         //cual es su guerrilla y los recuersos que tiene que buscar
-        
+
         $postdata = http_build_query(
             array(
                 'guerrillaName' => $usuario
@@ -40,14 +40,21 @@ class ApiModel
         return $guerrrilla;
     }
 
+    //Solicita el raking de guerrillas
     public function ranking()
     {
-        //aque se conecta con el Api, y se envia el correo registrado para saber 
-        //cual es su guerrilla y los recuersos que tiene que buscar
 
-        $data = file_get_contents("data/ranking.json");
-        $listasGuerrillas = json_decode($data, true);
+        $opts = array(
+            'http' =>
+            array(
+                'method'  => 'GET',
+                'header'  => 'Content-Type: application/x-www-form-urlencoded'
+            )
+        );
+        $context  = stream_context_create($opts);
+        $result = file_get_contents('http://localhost:50158/api/values/ranking', false, $context);
+        $listguerrrillas = json_decode($result, true);
     
-        return $listasGuerrillas;
+        return $listguerrrillas;
     }
 }//fin de clase

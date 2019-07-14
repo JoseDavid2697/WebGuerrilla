@@ -22,7 +22,7 @@ include_once 'public/header.php';
         <tr>
 
           <td><?php echo $guerrilla['rank'] ?></td>
-          <td><?php echo $guerrilla['name'] ?></td>
+          <td><?php echo $guerrilla['guerrillaName'] ?></td>
           <td><a class="btn btn-primary" href="?controlador=Guerrilla&accion=cargarVistaResult&inf=<?php echo $guerrilla['name'] ?>">Attack</a></td>
         </tr>
       <?php } ?>
