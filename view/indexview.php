@@ -16,7 +16,7 @@
     </div>
   </div>
   <div class="form-group" style="margin-left: 13px">
-    <button type="submit" class="btn btn-primary">Sign in</button>
+    <a class="btn btn-primary" href="?controlador=Guerrilla&accion=cargarVistaSignIn">Sign in</a>
   </div>
   <div class="form-group" style="margin-left: 13px">
     <button type="submit" class="btn btn-primary">Log in</button>

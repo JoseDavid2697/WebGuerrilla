@@ -14,6 +14,10 @@ class GuerrillaController {
         $this->view->show('settings.php',null);
     }
 
+    public function cargarVistaSignIn(){
+        $this->view->show('signin.php',null);
+    }
+
     public function cargarVistaMyProfile(){
         require_once 'model/ApiModel.php';
         $api = new ApiModel();
@@ -35,6 +39,15 @@ class GuerrillaController {
         
         
         $this->view->show('result.php',$_GET['inf']);
+    }
+
+    public function createGuerrilla(){
+        require_once 'model/ApiModel.php';
+        $api = new ApiModel();
+        $data['email']= $_POST['email'];
+        $data['faction']= $_POST['faction'];
+
+        $this->view->show('myprofile.php',$api->createGuerrilla($data));
     }
 
     public function cerrarSesion(){
