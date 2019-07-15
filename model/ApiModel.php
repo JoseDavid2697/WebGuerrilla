@@ -79,8 +79,36 @@ class ApiModel
         );
         $context  = stream_context_create($opts);
         $result = file_get_contents('http://localhost:50158/api/values/createGuerrilla', false, $context);
-        $guerrrilla = json_decode($result, true);
+        $guerrilla = json_decode($result, true);
     
-        return $guerrrilla;
+        return $guerrilla;
     }
+
+    //permite comprar unidades a nombre de la guerrilla 
+    public function buyUnits($unidad){
+        session_start();
+        $postdata = http_build_query(
+            array(
+                'guerrillaName' => $_SESSION['guerrilla'],
+                'unit' => $unidad
+            )
+        );
+
+
+
+        $opts = array(
+            'http' =>
+            array(
+                'method'  => 'POST',
+                'header'  => 'Content-Type: application/x-www-form-urlencoded',
+                'content' => $postdata
+            )
+        );
+        $context  = stream_context_create($opts);
+        $result = file_get_contents('http://localhost:50158/api/values/buyUnits/'.$_SESSION['guerrilla'], false, $context);
+        $guerrilla = json_decode($result, true);
+        return $guerrilla;
+    }
+
+
 }//fin de clase

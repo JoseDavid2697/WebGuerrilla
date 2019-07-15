@@ -22,7 +22,7 @@ class GuerrillaController {
         require_once 'model/ApiModel.php';
         $api = new ApiModel();
         session_start();
-        $_SESSION['sesion'] = 'armandocalvo06@gmail.com';
+        $_SESSION['guerrilla'] = 'armandocalvo06@gmail.com';
         $this->view->show('myprofile.php',$api->inspectGuerrilla($_SESSION['sesion']));
     }
 
@@ -48,6 +48,13 @@ class GuerrillaController {
         $data['faction']= $_POST['faction'];
 
         $this->view->show('myprofile.php',$api->createGuerrilla($data));
+    }
+
+    public function buyUnits(){
+        require_once 'model/ApiModel.php';
+        $api = new ApiModel();
+        $unidad = $_GET['unidad'];
+        $this->view->show('myprofile.php',$api->buyUnits($unidad));
     }
 
     public function cerrarSesion(){
