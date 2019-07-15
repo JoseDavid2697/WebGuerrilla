@@ -57,4 +57,30 @@ class ApiModel
     
         return $listguerrrillas;
     }
+
+    //crea una nueva cuenta con el correo y faccion deseados
+    public function createGuerrilla($data){
+        $postdata = http_build_query(
+            array(
+                'email' => $data['email'],
+                'faction' => $data['faction']
+            )
+        );
+
+
+
+        $opts = array(
+            'http' =>
+            array(
+                'method'  => 'POST',
+                'header'  => 'Content-Type: application/x-www-form-urlencoded',
+                'content' => $postdata
+            )
+        );
+        $context  = stream_context_create($opts);
+        $result = file_get_contents('http://localhost:50158/api/values/createGuerrilla', false, $context);
+        $guerrrilla = json_decode($result, true);
+    
+        return $guerrrilla;
+    }
 }//fin de clase
