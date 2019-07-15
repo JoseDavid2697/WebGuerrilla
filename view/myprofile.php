@@ -41,17 +41,17 @@ include_once 'public/header.php';
       <tr>
         <td>Assault</td>
         <td><?php echo $army['assault'] ?></td>
-        <td><button type="button" class="btn btn-primary">+</td>
+        <td><a class="btn btn-primary" href="?controlador=Guerrilla&accion=buyUnits&unidad=assault">+</td>
       </tr>
       <tr>
         <td>Engineer</td>
         <td><?php echo $army['engineer'] ?></td>
-        <td><button type="button" class="btn btn-primary">+</td>
+        <td><a class="btn btn-primary" href="?controlador=Guerrilla&accion=buyUnits&unidad=engineer">+</td>
       </tr>
       <tr>
         <td>Tank</td>
         <td><?php echo $army['tank'] ?></td>
-        <td><button type="button" class="btn btn-primary">+</td>
+        <td><a class="btn btn-primary" href="?controlador=Guerrilla&accion=buyUnits&unidad=tank">+</td>
       </tr>
     </tbody>
   </table>
@@ -72,7 +72,7 @@ include_once 'public/header.php';
       <tr>
         <td>bunker</td>
         <td><?php echo $buildings['bunker'] ?></td>
-        <td><button type="button" class="btn btn-primary">+</td>
+        <td><a class="btn btn-primary" href="?controlador=Guerrilla&accion=buyUnits&unidad=bunker">+</td>
       </tr>
       
     </tbody>
