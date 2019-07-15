@@ -29,9 +29,6 @@ class GuerrillaController {
     public function cargarVistaRanking(){
         require_once 'model/ApiModel.php';
         $api = new ApiModel();
-
-
-
         $this->view->show('ranking.php',$api->ranking());
     }
 
@@ -55,6 +52,17 @@ class GuerrillaController {
         $api = new ApiModel();
         $unidad = $_GET['unidad'];
         $this->view->show('myprofile.php',$api->buyUnits($unidad));
+    }
+
+    public function attack(){
+        require_once 'model/ApiModel.php';
+        $api = new ApiModel();
+        $target = $_GET['target'];
+        $this->view->show('result.php',$api->attack($target));
+    }
+
+    public function prueba(){
+        print_r("llego");
     }
 
     public function cerrarSesion(){

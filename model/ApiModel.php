@@ -110,5 +110,30 @@ class ApiModel
         return $guerrilla;
     }
 
+    public function attack($target){
+        session_start();
+        $postdata = http_build_query(
+            array(
+                'guerrillaName' => $_SESSION['guerrilla'],
+                'guerrillaTarget' => $target
+            )
+        );
+
+
+
+        $opts = array(
+            'http' =>
+            array(
+                'method'  => 'POST',
+                'header'  => 'Content-Type: application/x-www-form-urlencoded',
+                'content' => $postdata
+            )
+        );
+        $context  = stream_context_create($opts);
+        $result = file_get_contents('http://localhost:50158/api/values/attack/'.$target, false, $context);
+        $guerrilla = json_decode($result, true);
+        return $guerrilla;
+    }
+
 
 }//fin de clase

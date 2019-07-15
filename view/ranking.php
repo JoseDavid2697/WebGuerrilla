@@ -18,12 +18,12 @@ include_once 'public/header.php';
       </tr>
     </thead>
     <tbody>
-      <?php foreach ($vars as $guerrilla) { ?>
+      <?php foreach ($vars as $target) { ?>
         <tr>
 
-          <td><?php echo $guerrilla['rank'] ?></td>
-          <td><?php echo $guerrilla['guerrillaName'] ?></td>
-          <td><a class="btn btn-primary" href="?controlador=Guerrilla&accion=cargarVistaResult&inf=<?php echo $guerrilla['name'] ?>">Attack</a></td>
+          <td><?php echo $target['rank'] ?></td>
+          <td><?php echo $target['guerrillaName'] ?></td>
+          <td><a class="btn btn-primary" href="?controlador=Guerrilla&accion=attack&target=<?php echo $target['guerrillaName'] ?>">Attack</a></td>
         </tr>
       <?php } ?>
     </tbody>
