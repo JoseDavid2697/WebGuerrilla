@@ -23,7 +23,7 @@ class GuerrillaController {
         $api = new ApiModel();
         session_start();
         $_SESSION['guerrilla'] = 'armandocalvo06@gmail.com';
-        $this->view->show('myprofile.php',$api->inspectGuerrilla($_SESSION['sesion']));
+        $this->view->show('myprofile.php',$api->inspectGuerrilla($_SESSION['guerrilla']));
     }
 
     public function cargarVistaRanking(){
