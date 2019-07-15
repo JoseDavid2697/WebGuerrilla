@@ -36,7 +36,7 @@ class ApiModel
         $context  = stream_context_create($opts);
         $result = file_get_contents('http://localhost:50158/inspectGuerrilla/'.$usuario, false, $context);
         $guerrrilla = json_decode($result, true);
-    
+
         return $guerrrilla;
     }
 
