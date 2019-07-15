@@ -34,7 +34,7 @@ class ApiModel
             )
         );
         $context  = stream_context_create($opts);
-        $result = file_get_contents('http://localhost:50158/api/values/inspectGuerrilla/'.$usuario, false, $context);
+        $result = file_get_contents('http://localhost:50158/inspectGuerrilla/'.$usuario, false, $context);
         $guerrrilla = json_decode($result, true);
     
         return $guerrrilla;
@@ -52,7 +52,7 @@ class ApiModel
             )
         );
         $context  = stream_context_create($opts);
-        $result = file_get_contents('http://localhost:50158/api/values/ranking', false, $context);
+        $result = file_get_contents('http://localhost:50158/ranking', false, $context);
         $listguerrrillas = json_decode($result, true);
     
         return $listguerrrillas;
@@ -63,7 +63,8 @@ class ApiModel
         $postdata = http_build_query(
             array(
                 'email' => $data['email'],
-                'faction' => $data['faction']
+                'faction' => $data['faction'],
+                'name' => $data['guerrillaName']
             )
         );
 
@@ -78,10 +79,7 @@ class ApiModel
             )
         );
         $context  = stream_context_create($opts);
-        $result = file_get_contents('http://localhost:50158/api/values/createGuerrilla', false, $context);
-        $guerrilla = json_decode($result, true);
-    
-        return $guerrilla;
+        $result = file_get_contents('http://localhost:50158/createGuerrilla', false, $context);
     }
 
     //permite comprar unidades a nombre de la guerrilla 
@@ -105,7 +103,7 @@ class ApiModel
             )
         );
         $context  = stream_context_create($opts);
-        $result = file_get_contents('http://localhost:50158/api/values/buyUnits/'.$_SESSION['guerrilla'], false, $context);
+        $result = file_get_contents('http://localhost:50158/buyUnits/'.$_SESSION['guerrilla'], false, $context);
         $guerrilla = json_decode($result, true);
         return $guerrilla;
     }
@@ -130,7 +128,7 @@ class ApiModel
             )
         );
         $context  = stream_context_create($opts);
-        $result = file_get_contents('http://localhost:50158/api/values/attack/'.$target, false, $context);
+        $result = file_get_contents('http://localhost:50158/attack/'.$target, false, $context);
         $guerrilla = json_decode($result, true);
         return $guerrilla;
     }

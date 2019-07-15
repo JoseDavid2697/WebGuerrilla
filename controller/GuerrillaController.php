@@ -18,11 +18,18 @@ class GuerrillaController {
         $this->view->show('signin.php',null);
     }
 
+    public function cargarVistaMyProfile1(){
+        require_once 'model/ApiModel.php';
+        $api = new ApiModel();
+        session_start();
+        $_SESSION['guerrilla'] = $_POST['email'];
+        $this->view->show('myprofile.php',$api->inspectGuerrilla($_SESSION['guerrilla']));
+    }
+
     public function cargarVistaMyProfile(){
         require_once 'model/ApiModel.php';
         $api = new ApiModel();
         session_start();
-        $_SESSION['guerrilla'] = 'armandocalvo06@gmail.com';
         $this->view->show('myprofile.php',$api->inspectGuerrilla($_SESSION['guerrilla']));
     }
 
@@ -43,8 +50,9 @@ class GuerrillaController {
         $api = new ApiModel();
         $data['email']= $_POST['email'];
         $data['faction']= $_POST['faction'];
-
-        $this->view->show('myprofile.php',$api->createGuerrilla($data));
+        $data['guerrillaName']=$_POST['guerrillaName'];
+        $api->createGuerrilla($data);
+        $this->view->show('indexview.php');
     }
 
     public function buyUnits(){
