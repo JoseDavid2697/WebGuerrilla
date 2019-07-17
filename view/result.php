@@ -116,18 +116,13 @@ include_once 'public/header.php';
 
 
 
-  <h3>Loot</h3>
-  <?php $resources = $vars['resources'] ?>
-  <h5>Winner: <?php echo $vars['name'] ?></h5>
-  <h5>Oil: <?php echo $resources['oil'] ?></h5>
-  <h5>Money: <?php echo $resources['money'] ?></h5>
-  <h5>People: <?php echo $resources['people'] ?></h5>
-
+  <h3>Results Team 1</h3>
+  <?php $results = $vars['results'] ?>
+  <h5>Team 1: <?php echo $results[0]['name'] ?></h5>
+  <h5>Oil: <?php echo $results[0]['resources']['oil'] ?></h5>
+  <h5>Money: <?php echo $results[0]['resources']['money'] ?></h5>
+  <h5>People: <?php echo $results[0]['resources']['people'] ?></h5>
   <br>
-
-  <?php $army = $vars['army'] ?>
-
-
   <h4>Army</h4>
   <table class="table">
     <thead>
@@ -139,23 +134,20 @@ include_once 'public/header.php';
     <tbody>
       <tr>
         <td>Assault</td>
-        <td><?php echo $army['assault'] ?></td>
+        <td><?php echo $results[0]['army']['assault'] ?></td>
       </tr>
       <tr>
         <td>Engineer</td>
-        <td><?php echo $army['engineer'] ?></td>
+        <td><?php echo $results[0]['army']['engineer'] ?></td>
       </tr>
       <tr>
         <td>Tank</td>
-        <td><?php echo $army['tank'] ?></td>
+        <td><?php echo $results[0]['army']['tank'] ?></td>
       </tr>
     </tbody>
   </table>
 
   <h4>Buildings</h4>
-
-  <?php $buildings = $vars['buildings'] ?>
-
   <table class="table">
     <thead>
       <tr>
@@ -166,7 +158,55 @@ include_once 'public/header.php';
     <tbody>
       <tr>
         <td>bunker</td>
-        <td><?php echo $buildings['bunker'] ?></td>
+        <td><?php echo $results[0]['buildings']['bunker'] ?></td>
+      </tr>
+
+    </tbody>
+  </table>
+<br>
+<h3>Results Team 2</h3>
+  <?php $results = $vars['results'] ?>
+  <h5>Team 1: <?php echo $results[1]['name'] ?></h5>
+  <h5>Oil: <?php echo $results[1]['resources']['oil'] ?></h5>
+  <h5>Money: <?php echo $results[1]['resources']['money'] ?></h5>
+  <h5>People: <?php echo $results[1]['resources']['people'] ?></h5>
+  <br>
+  <h4>Army</h4>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Assault</td>
+        <td><?php echo $results[1]['army']['assault'] ?></td>
+      </tr>
+      <tr>
+        <td>Engineer</td>
+        <td><?php echo $results[1]['army']['engineer'] ?></td>
+      </tr>
+      <tr>
+        <td>Tank</td>
+        <td><?php echo $results[1]['army']['tank'] ?></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>Buildings</h4>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>bunker</td>
+        <td><?php echo $results[1]['buildings']['bunker'] ?></td>
       </tr>
 
     </tbody>
