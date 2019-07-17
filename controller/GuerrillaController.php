@@ -22,7 +22,7 @@ class GuerrillaController {
         require_once 'model/ApiModel.php';
         $api = new ApiModel();
         session_start();
-        $_SESSION['guerrilla'] = $_POST['email'];
+        $_SESSION['guerrilla'] = $_POST['usuario'];
         $this->view->show('myprofile.php',$api->inspectGuerrilla($_SESSION['guerrilla']));
     }
 
